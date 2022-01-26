@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt install -y libdrm-dev zlib1g-dev libudev-dev
+#sudo apt install -y libdrm-dev zlib1g-dev libudev-dev
 
 mkdir -p $ROCM_BUILD_DIR/roct-thunk-interface
 cd $ROCM_BUILD_DIR/roct-thunk-interface

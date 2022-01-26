@@ -21,6 +21,7 @@ cmake \
     -DAMD_OPENCL_PATH="$OPENCL_DIR" \
     -DROCCLR_PATH="$ROCCLR_DIR" \
     -DCMAKE_PREFIX_PATH="$ROCM_INSTALL_DIR" \
+    -DCMAKE_HIP_ARCHITECTURES="gfx908" \
     -DCMAKE_BUILD_TYPE=Release \
     -G Ninja \
     $ROCM_GIT_DIR/hipamd
