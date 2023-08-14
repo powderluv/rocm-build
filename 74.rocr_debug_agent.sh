@@ -15,9 +15,14 @@ cmake \
     -DCPACK_GENERATOR=DEB \
     -G Ninja \
     $ROCM_GIT_DIR/rocr_debug_agent
-ninja
-ninja package
-sudo dpkg -i *.deb
+if [[ $1 = "--cmake-install" ]]; then
+  echo "Cmake install into ${ROCM_INSTALL_DIR}"
+  cmake --build build --target install
+else
+  echo "deb package install"
+  cmake --build build --target package
+  sudo dpkg -i *.deb
+fi
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
