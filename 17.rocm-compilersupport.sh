@@ -18,9 +18,10 @@ cmake \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -DCPACK_PACKAGING_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -DCPACK_GENERATOR=DEB \
+    -DLLVM_DISABLE_ABI_BREAKING_CHECKS_ENFORCING=1 \
     -G Ninja \
     -B build \
-    $ROCM_GIT_DIR/ROCm-CompilerSupport/lib/comgr
+    $ROCM_GIT_DIR/llvm-project/amd/comgr
 
 if [[ $1 = "--cmake-install" ]]; then
   echo "Cmake install into ${ROCM_INSTALL_DIR}"

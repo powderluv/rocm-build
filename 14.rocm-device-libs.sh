@@ -15,7 +15,7 @@ cmake \
     -DCPACK_GENERATOR=DEB \
     -G Ninja \
     -B build \
-    $ROCM_GIT_DIR/ROCm-Device-Libs
+    $ROCM_GIT_DIR/llvm-project/amd/device-libs
 
 if [[ $1 = "--cmake-install" ]]; then
   echo "Cmake install into ${ROCM_INSTALL_DIR}"
